@@ -1,0 +1,16 @@
+{
+  "name": "localhost",
+  "version": "1.0.0",
+  "description": "socket chatroom exercise",
+  "main": "server.js",
+  "scripts": {
+    "test": "hello world",
+    "start": "node server.js"
+  },
+  "author": "Sven Vander Mierde",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.4.0"
+  }
+}
