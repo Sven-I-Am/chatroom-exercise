@@ -35,6 +35,13 @@ For the next two days we are tasked with building a chatroom app using nodejs an
     * A login screen and chat screen
       * chat screen becomes available after login button gets clicked
       * no input required yet, that's for after lunch
+  * added required to username input field
+  * can now display current active users
+  * users update when new user joins
+  * users can disconnect, user-list gets updated using the socket.id to identify who left
+    * using the `array.findIndex();` method as explained [on w3schools](https://www.w3schools.com/jsref/jsref_findindex.asp)
+  * added `/commands` to the chatroom
+    * first command is `/kick <userName>` -> kicks the target out of the room by refreshing their window
 
 ## To Do
 This to do list is for personal use, the full to do list is added at the start of the challenge and as we complete
@@ -44,11 +51,11 @@ objectives they will be moved up into the timeline section and ticked off using 
 
 * Make a UI that makes it easy for people to send messages in this chatroom. :heavy_check_mark:
 * It must be possible to send a message to everyone or to yourself :heavy_check_mark:
-* Make sure we can identify who sent the message through a username.
+* Make sure we can identify who sent the message through a username. :heavy_check_mark:
   * We could make a local variable and prompt the user to choose a username
   * We can then emit this username along with the sent message to keep track of who sent what.
-* Make a list to show everyone who is connected to the chatroom
-* Implement something funny! The sky is the limit! (it can be very simple if you want)
+* Make a list to show everyone who is connected to the chatroom :heavy_check_mark:
+* Implement something funny! The sky is the limit! (it can be very simple if you want):heavy_check_mark: 
   * For example, you could make a functionality to make someone else's font size obscurely small!
   * You could implement a feature where you can speak with someone else's username
 * AND SO MUCH MORE -> BE CREATIVE

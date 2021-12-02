@@ -22,11 +22,10 @@
     </header>
     <!--main-->
     <main class="vw-100 vh-100 d-flex justify-content-center align-items-center">
-      <div class="w-75 h-75 bg-secondary" id="loginScreen">
+      <div class="w-75 h-75 bg-secondary" id="joinScreen">
         <div class="input-group w-50">
-          <input type="text" placeholder="username" class="form-control" />
-          <input type="password" placeholder="password" class="form-control" />
-          <button type="submit" id="loginBtn" class="btn btn-primary">Login</button>
+          <input type="text" placeholder="username" id="userName" class="form-control" />
+          <button type="submit" id="joinBtn" class="btn btn-primary">Join</button>
         </div>
       </div>
       <div class="w-75 h-75 bg-info" id="chatScreen">
@@ -67,6 +66,6 @@
     <!--Socket.io script-->
     <script src="/socket.io/socket.io.js"></script>
     <!--Project script-->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

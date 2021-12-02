@@ -5,3 +5,11 @@
 #showMessage {
   height: fit-content;
 }
+
+#activeUsers li {
+  list-style: none;
+}
+
+.messBtn {
+  margin-left: 2em;
+}
