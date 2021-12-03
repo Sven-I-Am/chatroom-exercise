@@ -1,7 +1,7 @@
 # Setting up a chatroom application using socket.io
 ### exercise in week 10 (29/11/2021 - 03/12/2021) of our BeCode training
 ## Published page
-N/A
+[https://glacial-ravine-45090.herokuapp.com/](https://glacial-ravine-45090.herokuapp.com/)
 ## Challenge
 For the next two days we are tasked with building a chatroom app using nodejs and socket.io. The challenge is to set up the server from scratch by following [this exercise](https://github.com/becodeorg/ANT-Lamarr-5.34/tree/main/2.The-Hill/js/sockets) written by [coach Tim](https://github.com/Timmeahj).
 
@@ -67,6 +67,7 @@ For the next two days we are tasked with building a chatroom app using nodejs an
       * still have to add the check if the user is online
     * added `/rick` command to RickRoll a specific user
     * added `/commands` command to show all available commands to sender
+    * I fixed some responsive styling issues before doing my final commit for this exercise
 
 ## To Do
 This to do list is for personal use, the full to do list is added at the start of the challenge and as we complete
@@ -87,7 +88,7 @@ objectives they will be moved up into the timeline section and ticked off using 
 
 ### Nice to have
 
-* Instead of just asking for a username, we can make a user class with properties such as
+* Instead of just asking for a username, we can make a user class with properties such as :heavy_check_mark:
   * username
   * password (if you make a login system)
   * avatar
@@ -95,9 +96,9 @@ objectives they will be moved up into the timeline section and ticked off using 
   * ... whatever you want :D
     * ps: don't worry about security
 * You can make different rooms to join by code
-* Make it possible to send private messages to a person
+* Make it possible to send private messages to a person :heavy_check_mark:
 * Add images, emojis, videos, gifs to your messages
 * Bring back some features from MSN! (lol)
-* Make a login / registration (a bit more difficult)
+* Make a login / registration (a bit more difficult) :heavy_check_mark:
   * again, security is not a must
 * PIMP IT
