@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const app = express();
-const PORT = 9000;
+// const PORT = 9000;
 const clientPath = `${__dirname}/../client`;
 app.use(express.static(clientPath));
 const server = http.createServer(app);
@@ -160,8 +160,8 @@ io.on('connection', (socket) => {
   
 });
 
-server.listen(PORT,() => { 
-    console.log('listening on port ' + PORT);
+server.listen(process.env.PORT,() => { 
+    console.log('listening on port ' + process.env.PORT);
 })
 
 class myUser {
