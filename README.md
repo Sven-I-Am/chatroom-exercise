@@ -22,7 +22,7 @@ For the next two days we are tasked with building a chatroom app using nodejs an
 | ![git](./assets/img/readme/git-logo.png) | ![github](./assets/img/readme/github-logo.png) | |
 
 ## Timeline
-* Day1 (:date: 02/12/2021)
+* Day 1 (:date: 02/12/2021)
   * the day started with a short exercise briefing by [coach Tim](https://github.com/Timmeahj)
   * I created a new repository on github and cloned it to my local environment
   * In the cloned repo I created the folders as instructed
@@ -42,6 +42,23 @@ For the next two days we are tasked with building a chatroom app using nodejs an
     * using the `array.findIndex();` method as explained [on w3schools](https://www.w3schools.com/jsref/jsref_findindex.asp)
   * added `/commands` to the chatroom
     * first command is `/kick <userName>` -> kicks the target out of the room by refreshing their window
+* Day 2 (:date: 03/12/2021)
+  * Today I'm hoping to add some extra functionality to the chatroom
+    * have alerts when someone joins or leaves
+    * have login and register functionality
+    * Register:
+      * check for unique username
+      * Add new user to userArray with properties: 
+        * userName - string
+        * password - string
+        * socket-id - string
+        * online - boolean
+      * auto login user
+    * Login:
+      * check for existing userName
+      * check password for username
+      * if all true -> set property online to true
+    * Style the chatScreen to show text from bottom to top
 
 ## To Do
 This to do list is for personal use, the full to do list is added at the start of the challenge and as we complete

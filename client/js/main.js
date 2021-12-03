@@ -2,18 +2,20 @@ let socket = io.connect();
 
 const joinScreen = document.getElementById('joinScreen');
 const chatScreen = document.getElementById('chatScreen');
-const joinBtn = document.getElementById('joinBtn');
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
 const sendToAll = document.getElementById('sendToAll');
 const sendToSelf = document.getElementById('sendToSelf');
 let target = document.getElementById('target');
 let messageInput = document.getElementById('userMessage'); 
 let displayUsers = document.getElementById('activeUsers');
-let jokeBtns= document.getElementsByClassName('messBtn');
 
 chatScreen.style.display = 'none';
 
+
 let user = {
-    userName: undefined
+    userName: undefined,
+    password: undefined
 }
 
 /*joke api*/
@@ -26,11 +28,18 @@ async function getJOKE (){
 
 /*start eventListeners*/
 
-joinBtn.addEventListener('click', ()=>{
+loginBtn.addEventListener('click', ()=>{
     user.userName = document.getElementById('userName').value;
-    socket.emit('join', user);
-    joinScreen.style.display = 'none';
-    chatScreen.style.display = 'inline-block';
+    user.password = document.getElementById('password').value;
+    console.log(user);
+    socket.emit('login', user);
+})
+
+registerBtn.addEventListener('click', ()=>{
+    user.userName = document.getElementById('userName').value;
+    user.password = document.getElementById('password').value;
+    console.log(user);
+    socket.emit('register', user);
 })
 
 sendToAll.addEventListener('click', () =>{
@@ -51,8 +60,19 @@ sendToSelf.addEventListener('click', () => {
 
 /*start socket.on*/
 
+socket.on('loginError', (message)=>{
+    alert('Login Error: ' + message);
+})
+
+socket.on('success', (message)=>{
+    joinScreen.classList.remove('d-flex');
+    joinScreen.style.display = 'none';
+    chatScreen.style.display = 'inline-block';
+    target.innerHTML += '<div id="showMessage" class="w-100 border border-primary text-end px-1 my-1">' + message + '</div>';
+})
+
 socket.on('displayMessage', (data) => {
-    target.innerHTML += '<div id="showMessage" class="w-100 border border-primary text-end px-1"><p>' + data.user + ': ' + data.message + '</p></div>'
+    target.innerHTML += '<div id="showMessage" class="w-100 border border-primary text-end px-1 my-1">' + data.user + ': ' + data.message + '</div>';
 });
 
 socket.on('activeUsers', (data) => {
@@ -62,8 +82,21 @@ socket.on('activeUsers', (data) => {
     })
 })
 
+socket.on('joinMessage', (user)=>{
+    target.innerHTML += '<div id="showMessage" class="w-100 border border-success text-end px-1 my-1" >' + user + ' has joined</div>';
+})
+
+socket.on('leaveMessage', (user)=>{
+    target.innerHTML += '<div id="showMessage" class="w-100 border border-danger text-end px-1 my-1">' + user + ' has left</div>';
+})
+
 socket.on('kick', () =>{
     location.reload();    
+})
+
+socket.on('rickRoll', () =>{
+    open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+    focus();
 })
 
 /*end socket.on*/

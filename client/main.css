@@ -1,4 +1,4 @@
-#target {
+.shadow-inside {
   box-shadow: 0px 0px 2px 2px #0d6efd inset;
 }
 
@@ -12,4 +12,17 @@
 
 .messBtn {
   margin-left: 2em;
+}
+
+.screens {
+  height: 80%;
+  margin: 6rem 0 5rem 0;
+}
+
+.output {
+  height: 80%;
+}
+
+.input {
+  height: 15%;
 }

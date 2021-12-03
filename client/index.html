@@ -22,23 +22,28 @@
     </header>
     <!--main-->
     <main class="vw-100 vh-100 d-flex justify-content-center align-items-center">
-      <div class="w-75 h-75 bg-secondary" id="joinScreen">
-        <div class="input-group w-50">
+      <div class="w-75 bg-secondary d-flex justify-content-center align-items-center screens" id="joinScreen">
+        <div class="input-group w-75">
           <input type="text" placeholder="username" id="userName" class="form-control" />
-          <button type="submit" id="joinBtn" class="btn btn-primary">Join</button>
+          <input type="password" placeholder="password" id="password" class="form-control" />
+          <button type="submit" id="loginBtn" class="btn btn-primary">Login</button>
+          <button type="submit" id="registerBtn" class="btn btn-outline-dark">Register</button>
         </div>
+        <div id="loginError"></div>
       </div>
-      <div class="w-75 h-75 bg-info" id="chatScreen">
-        <div class="w-100 h-75 p-5 row">
-          <div id="target" class="h-100 bg-light rounded px-3 py-1 overflow-auto col-10">
-            <!--chat message screen-->
+      <div class="w-75 bg-info screens py-2" id="chatScreen">
+        <div class="w-100 px-5 row output">
+          <div class="shadow-inside h-100 bg-light rounded px-3 py-1 overflow-auto col-10 d-flex flex-column-reverse">
+            <div id="target">
+              <!--chat message screen-->
+            </div>
           </div>
           <div id="activeUsers" class="h-100 bg-secondary rounded px-3 py-1 overflow-auto col-2">
-            <!--chat message screen-->
+            <!--active users screen-->
           </div>
         </div>
-        <div class="w-100 h-25 p-5 row">
-          <div class="input-group w-100 bg-light border border-primary rounded d-flex justify-content-center p-3">
+        <div class="w-100 px-5 row input">
+          <div class="input-group w-100 bg-light border border-primary rounded d-flex justify-content-center px-1 py-3">
             <textarea
               required
               type="text"

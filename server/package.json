@@ -1,17 +1,26 @@
 {
-  "name": "localhost",
+  "name": "chatroom-exercise",
   "version": "1.0.0",
   "description": "socket chatroom exercise",
   "main": "server.js",
   "scripts": {
-    "test": "hello world",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "keywords": [
+    "exercise",
+    "chatroom",
+    "becode",
+    "socketio"
+  ],
   "author": "Sven Vander Mierde",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "socket.io": "^4.4.0",
-    "sv443-joke-api": "^0.1.0"
+    "heroku": "^7.59.2",
+    "socket.io": "^4.4.0"
+  },
+  "engines": {
+    "node": "16.13.0"
   }
 }
