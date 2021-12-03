@@ -19,10 +19,33 @@
   margin: 6rem 0 5rem 0;
 }
 
+.input,
+.output {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .output {
   height: 80%;
 }
 
 .input {
   height: 15%;
+}
+
+@media only screen and (max-width: 1000px) {
+  #joinScreen,
+  #chatScreen {
+    height: 100vh;
+  }
+  .input,
+  .output {
+    width: 100%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }

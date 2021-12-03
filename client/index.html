@@ -17,23 +17,23 @@
   </head>
   <body>
     <!--Header-->
-    <header class="fixed-top d-flex justify-content-center bg-dark text-white">
+    <header class="fixed-top d-flex justify-content-center bg-dark text-white" id="header">
       <h1>Sven's super simple chatroom app.</h1>
     </header>
     <!--main-->
     <main class="vw-100 vh-100 d-flex justify-content-center align-items-center">
-      <div class="w-75 bg-secondary d-flex justify-content-center align-items-center screens" id="joinScreen">
-        <div class="input-group w-75">
-          <input type="text" placeholder="username" id="userName" class="form-control" />
-          <input type="password" placeholder="password" id="password" class="form-control" />
-          <button type="submit" id="loginBtn" class="btn btn-primary">Login</button>
-          <button type="submit" id="registerBtn" class="btn btn-outline-dark">Register</button>
-        </div>
+      <div class="w-75 bg-secondary d-flex justify-content-center align-items-center screens flex-column" id="joinScreen">
+        <h2 style="color: red;">Warning!</h2>
+        <p>This chatroom app was built as an exercise, passwords are in no way secured yet, so do not use your usual password here!</p>
+          <input type="text" placeholder="username" id="userName" /></br>
+          <input type="password" placeholder="password" id="password" /></br>
+          <button type="submit" id="loginBtn" class="btn btn-primary">Login</button></br>
+          <button type="submit" id="registerBtn" class="btn btn-outline-dark">Register</button></br>
         <div id="loginError"></div>
       </div>
       <div class="w-75 bg-info screens py-2" id="chatScreen">
-        <div class="w-100 px-5 row output">
-          <div class="shadow-inside h-100 bg-light rounded px-3 py-1 overflow-auto col-10 d-flex flex-column-reverse">
+        <div class="w-100 row g-0 output">
+          <div class="shadow-inside h-100 bg-light rounded px-3 py-1 overflow-auto col-10 d-flex flex-column-reverse" id="showMessages">
             <div id="target">
               <!--chat message screen-->
             </div>
@@ -42,8 +42,8 @@
             <!--active users screen-->
           </div>
         </div>
-        <div class="w-100 px-5 row input">
-          <div class="input-group w-100 bg-light border border-primary rounded d-flex justify-content-center px-1 py-3">
+        <div class="w-100 row g-0 input" id="chatBox">
+          <div class="input-group w-100 bg-light border border-primary rounded d-flex justify-content-center">
             <textarea
               required
               type="text"
@@ -52,14 +52,14 @@
               placeholder="Your message"
               aria-label="Chat message input with two buttons"
             ></textarea>
-            <button type="submit" id="sendToAll" class="btn btn-primary">Send all</button>
-            <button type="button" id="sendToSelf" class="btn btn-outline-primary">Send to self</button>
+            <button type="submit" id="sendToAll" class="btn btn-primary">Send</button>
+            <!-- <button type="button" id="sendToSelf" class="btn btn-outline-primary">Send to self</button> -->
           </div>
         </div>
       </div>
     </main>
     <!--Footer-->
-    <footer class="fixed-bottom d-flex justify-content-center bg-dark text-white">
+    <footer class="fixed-bottom d-flex justify-content-center bg-dark text-white" id="footer">
       <p>Made by Sven &copy; 2021</p>
     </footer>
     <!--Bootstrap script-->

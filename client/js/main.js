@@ -10,8 +10,32 @@ let target = document.getElementById('target');
 let messageInput = document.getElementById('userMessage'); 
 let displayUsers = document.getElementById('activeUsers');
 
+/*check styles*/
 chatScreen.style.display = 'none';
+function checkStyles() {
+    if(innerWidth < 1000){
+        joinScreen.classList.remove('w-75');
+        joinScreen.classList.add('vw-100');
+        chatScreen.classList.remove('w-75');
+        chatScreen.classList.add('vw-100');
+        document.getElementById('showMessages').classList.add('w-100');
+        document.getElementById('header').style.visibility = 'hidden';
+        document.getElementById('footer').style.visibility = 'hidden';
+        
+        displayUsers.style.visibility = 'hidden';
+    } else {
+        joinScreen.classList.remove('vw-100');
+        joinScreen.classList.add('w-75');
+        chatScreen.classList.remove('vw-100');
+        chatScreen.classList.add('w-75');
+        document.getElementById('showMessages').classList.remove('w-100');
+        document.getElementById('header').style.visibility = 'visible';
+        document.getElementById('footer').style.visibility = 'visible';
+        displayUsers.style.visibility = 'visible';
+    }
+}
 
+checkStyles();
 
 let user = {
     userName: undefined,
@@ -19,6 +43,8 @@ let user = {
 }
 
 /*start eventListeners*/
+
+window.addEventListener('resize', checkStyles);
 
 loginBtn.addEventListener('click', ()=>{
     user.userName = document.getElementById('userName').value;
@@ -41,12 +67,12 @@ sendToAll.addEventListener('click', () =>{
     messageInput.value = '';
 })
 
-sendToSelf.addEventListener('click', () => {
-    let sender = user.userName;
-    let message = messageInput.value;
-    socket.emit('sendToSelf', new Post(sender, message));
-    messageInput.value = '';
-})
+// sendToSelf.addEventListener('click', () => {
+//     let sender = user.userName;
+//     let message = messageInput.value;
+//     socket.emit('sendToSelf', new Post(sender, message));
+//     messageInput.value = '';
+// })
 
 messageInput.addEventListener('keyup', (e)=>{
     if(e.keyCode === 13){
