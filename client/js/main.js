@@ -18,14 +18,6 @@ let user = {
     password: undefined
 }
 
-/*joke api*/
-
-let input = 'https://v2.jokeapi.dev/joke/Any';
-async function getJOKE (){
-    let api = await fetch(input);
-    let jokesArray = await api.json();
-}
-
 /*start eventListeners*/
 
 loginBtn.addEventListener('click', ()=>{
@@ -54,6 +46,13 @@ sendToSelf.addEventListener('click', () => {
     let message = messageInput.value;
     socket.emit('sendToSelf', new Post(sender, message));
     messageInput.value = '';
+})
+
+messageInput.addEventListener('keyup', (e)=>{
+    if(e.keyCode === 13){
+        e.preventDefault;
+        sendToAll.click();
+    }
 })
 
 /*end eventListeners*/

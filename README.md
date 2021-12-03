@@ -59,6 +59,14 @@ For the next two days we are tasked with building a chatroom app using nodejs an
       * check password for username
       * if all true -> set property online to true
     * Style the chatScreen to show text from bottom to top
+    * send message to all when `ENTER` is used
+    * host on heroku for live testing
+      * for this step I had to rejig my file structure since I had installed my dependencies inside the server folder
+      * took some work, but the app is now live on [https://glacial-ravine-45090.herokuapp.com/](https://glacial-ravine-45090.herokuapp.com/)
+    * added `/dm` command to send a private message to other user
+      * still have to add the check if the user is online
+    * added `/rick` command to RickRoll a specific user
+    * added `/commands` command to show all available commands to sender
 
 ## To Do
 This to do list is for personal use, the full to do list is added at the start of the challenge and as we complete
