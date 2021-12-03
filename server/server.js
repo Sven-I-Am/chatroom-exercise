@@ -107,7 +107,7 @@ io.on('connection', (socket) => {
         if (commandsArray.includes(command)) {
             let receiver;
             let message;
-            let checkId;
+            let checkID;
             switch (command) {
                 case '/commands':
                     data.message = 'Available commands: </br>';
